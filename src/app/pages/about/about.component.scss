@@ -1,0 +1,35 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 50px;
+}
+
+.text p {
+  margin-bottom: 16px;
+}
+
+.tech-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 10px;
+  color: var(--muted);
+}
+
+.tech-list li::before {
+  content: '▹';
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

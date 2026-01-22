@@ -1,0 +1,19 @@
+<nav class="nav container">
+  <div class="logo-wrapper">
+    <app-logo />
+    <span class="brand-name">TechFlow</span>
+  </div>
+
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul [class.active]="menuOpen">
+    <li (click)="scroll('about'); closeMenu()">About</li>
+    <li (click)="scroll('work'); closeMenu()">Work</li>
+    <li (click)="scroll('skills'); closeMenu()">Skills</li>
+    <li (click)="scroll('contact'); closeMenu()">Contact</li>
+  </ul>
+</nav>

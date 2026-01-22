@@ -1,0 +1,188 @@
+<div class="container work-section">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <p class="section-subtitle">Showcasing innovative solutions and technical excellence</p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects">
+    @for (item of projects; track $index) {
+      <div class="project-card" [class.even]="$index % 2 === 1">
+        <div class="project-content">
+          <p class="overline">Featured Project</p>
+          <h3 class="project-title">{{ item.title }}</h3>
+          <div class="project-description">
+            <p>{{ item.description }}</p>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="tech-section">
+            <span class="tech-label">Technologies</span>
+            <ul class="tech-list">
+              @for (tech of item.tech; track $index) {
+                <li class="tech-tag">{{ tech }}</li>
+              }
+            </ul>
+          </div>
+
+          <!-- Project Links -->
+          <div class="project-actions">
+            @if (item.link) {
+              <a class="btn btn-primary" (click)="goToNotFound()">
+                <span>View Project</span>
+                <span class="arrow">→</span>
+              </a>
+            }
+            <a class="btn btn-secondary" href="#contact">Hire Me</a>
+          </div>
+        </div>
+
+        @if(item.title === "Enterprise Analytics Dashboard"){
+          <div class="project-visual">
+            <div class="animation">
+              <lottie-player src="assets/dashboard.json" background="transparent" speed="1" loop autoplay>
+              </lottie-player>
+            </div>
+          </div>
+        }
+         @if(item.title === "Multi-tenant SaaS Application"){
+          <div class="project-visual">
+            <div class="animation">
+              <lottie-player src="assets/SaaSDashboard.json" background="transparent" speed="1" loop autoplay>
+              </lottie-player>
+            </div>
+          </div>
+        }
+         @if(item.title === "Logistics Tracking System"){
+          <div class="project-visual">
+            <div class="animation">
+              <lottie-player src="assets/logistics.json" background="transparent" speed="1" loop autoplay>
+              </lottie-player>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-showcase">
+    <h3>Professional Services</h3>
+    <p class="skills-subtitle">What I can build for you</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h4>Web Development</h4>
+        <p>Modern, responsive web applications using Angular, React, and latest web technologies</p>
+        <ul class="service-list">
+          <li>Single Page Applications (SPA)</li>
+          <li>Progressive Web Apps (PWA)</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h4>Backend Services</h4>
+        <p>Scalable backend systems with .NET Core and Node.js, optimized for performance</p>
+        <ul class="service-list">
+          <li>RESTful APIs & Microservices</li>
+          <li>.NET Core & Node.js</li>
+          <li>Database Design & Optimization</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h4>Cloud Solutions</h4>
+        <p>Deploy and scale your applications on AWS and Google Cloud Platform</p>
+        <ul class="service-list">
+          <li>AWS & GCP Setup</li>
+          <li>Cloud Architecture</li>
+          <li>DevOps & CI/CD</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h4>Full-Stack Solutions</h4>
+        <p>End-to-end development from frontend to backend with cloud deployment</p>
+        <ul class="service-list">
+          <li>Complete Project Delivery</li>
+          <li>Tech Stack Optimization</li>
+          <li>Maintenance & Support</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h4>UX/UI Design</h4>
+        <p>Beautiful and intuitive user interfaces with excellent user experience</p>
+        <ul class="service-list">
+          <li>User Research & Wireframing</li>
+          <li>UI/UX Design</li>
+          <li>Prototyping & User Testing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack Section -->
+  <div class="tech-expertise">
+    <h3>Technology Expertise</h3>
+
+    <div class="expertise-grid">
+      <div class="expertise-category">
+        <h4>Frontend</h4>
+        <div class="tag-group">
+          <span class="expertise-tag">Angular</span>
+          <span class="expertise-tag">React</span>
+          <span class="expertise-tag">TypeScript</span>
+          <span class="expertise-tag">SCSS</span>
+          <span class="expertise-tag">Responsive Design</span>
+        </div>
+      </div>
+
+      <div class="expertise-category">
+        <h4>Backend</h4>
+        <div class="tag-group">
+          <span class="expertise-tag">.NET Core</span>
+          <span class="expertise-tag">Node.js</span>
+          <span class="expertise-tag">C#</span>
+          <span class="expertise-tag">REST APIs</span>
+          <span class="expertise-tag">Databases</span>
+        </div>
+      </div>
+
+      <div class="expertise-category">
+        <h4>Cloud & DevOps</h4>
+        <div class="tag-group">
+          <span class="expertise-tag">AWS</span>
+          <span class="expertise-tag">Google Cloud</span>
+          <span class="expertise-tag">Docker</span>
+          <span class="expertise-tag">CI/CD</span>
+          <span class="expertise-tag">Deployment</span>
+        </div>
+      </div>
+
+      <div class="expertise-category">
+        <h4>Tools & Methods</h4>
+        <div class="tag-group">
+          <span class="expertise-tag">Git</span>
+          <span class="expertise-tag">Agile</span>
+          <span class="expertise-tag">Testing</span>
+          <span class="expertise-tag">Performance</span>
+          <span class="expertise-tag">Security</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="work-cta">
+    <h3>Ready to Start Your Project?</h3>
+    <p>Let's collaborate to build something amazing. Get in touch for a free consultation.</p>
+    <a class="cta-btn" href="#contact">Start a Project</a>
+  </div>
+</div>

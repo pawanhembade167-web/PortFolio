@@ -1,6 +1,16 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app';
+import { HomeComponent } from './app/pages/home/home';
+import { NotFound } from './app/pages/pages/not-found/not-found';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter([
+      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
+      { path: 'notfound', component: NotFound },
+      { path: '**', redirectTo: 'notfound' }
+    ])
+  ]
+});

@@ -1,0 +1,246 @@
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-header {
+  margin-bottom: 24px;
+}
+
+.intro {
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: clamp(42px, 8vw, 64px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--text-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 56px);
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 500;
+}
+
+.desc {
+  max-width: 600px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Tech Stack Section */
+.tech-stack {
+  margin-top: 48px;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.tech-stack h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.skill-badge {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  transition: all 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+
+  &:hover {
+    border-color: var(--accent);
+    background-color: rgba(var(--accent-rgb), 0.05);
+    transform: translateY(-4px);
+  }
+
+  .icon {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  span {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+}
+
+/* CTA Buttons */
+.cta-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-size: 14px;
+
+  &.primary {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    color: black;
+    width: 10em;
+    border-color: var(--accent);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.3);
+    }
+  }
+
+  &.secondary {
+    color: var(--accent);
+    border-color: var(--accent);
+    background-color: transparent;
+    width: 10em;
+
+    &:hover {
+      background-color: rgba(var(--accent-rgb), 0.1);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Decorative Element */
+.hero-decoration {
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+   .cta-container {
+    flex-direction: row; /* was column */
+    flex-wrap: wrap;     /* allow wrapping if needed */
+    justify-content: center; /* center them horizontally */
+    gap: 16px;
+  }
+
+  .cta {
+    width: auto; /* let them size naturally */
+  }
+
+  .hero-decoration {
+    width: 250px;
+    height: 250px;
+    right: -20%;
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-animation {
+  width: 400px;
+  max-width: 100%;
+}
+
+.hero-animation lottie-player {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-animation {
+    width: 300px;
+  }
+}
